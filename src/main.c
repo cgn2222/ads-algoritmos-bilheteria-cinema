@@ -137,8 +137,8 @@ int main(int argc, char **argv) {
         for (size_t i = 0; i < BILHETERIA_NUM_FILMES; i++) {
             printf("--- %s ---\n", filmes[i]);
             for (size_t j = 0; j < BILHETERIA_NUM_DIAS; j++) {
-                char prompt[96];
-                snprintf(prompt, sizeof(prompt), "  Ingressos em %-12s: ", dias[j]);
+                char prompt[128];
+                snprintf(prompt, sizeof(prompt), "  Ingressos em %-12.15s: ", dias[j]);
                 if (!ler_inteiro_nao_negativo(prompt, &matriz.ingressos[i][j])) {
                     fprintf(stderr, "\n[ERRO] Entrada encerrada antes do preenchimento da matriz.\n");
                     return EXIT_FAILURE;
